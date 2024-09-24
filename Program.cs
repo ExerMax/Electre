@@ -78,6 +78,7 @@ var disagreementMatrix = from pair in comparedPairs
                               .MaxBy(x => x.Val).Res
                       };
 
+//Threshold values
 disagreementMatrix = from i in disagreementMatrix
                      select new Index
                     {
