@@ -1,6 +1,6 @@
-﻿namespace Electre.src
+﻿namespace Electre.src.Data
 {
-    public class Index
+    internal class Index
     {
         public string PropA { get; set; }
         public string PropB { get; set; }

@@ -1,6 +1,6 @@
-﻿namespace Electre.src
+﻿namespace Electre.src.Data
 {
-    public class ComparedPair
+    internal class ComparedPair
     {
         public string PropA { get; set; }
         public string PropB { get; set; }

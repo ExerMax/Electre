@@ -1,4 +1,4 @@
-﻿namespace Electre.src
+﻿namespace Electre.src.Data
 {
     public class Criterion
     {
