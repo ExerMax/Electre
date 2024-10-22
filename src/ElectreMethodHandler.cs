@@ -14,13 +14,17 @@ namespace Electre.src
         private List<Index> _disagreementMatrix { get; set; }
         private List<Index> _superTable { get; set; }
         private List<Result> _resultSet { get; set; }
+        private double _agreementIndex { get; set; }
+        private double _disagreementIndex { get; set; }
 
-        public ElectreMethodHandler(ElectrePrinter printer, List<Criterion> criterions, List<Value> values)
+        public ElectreMethodHandler(ElectrePrinter printer, List<Criterion> criterions, List<Value> values, double agreementIndex, double disagreementIndex)
         {
             _criterions = new List<Criterion>(criterions);
             _values = new List<Value>(values);
             _criterionsSum = _criterions.Sum(c => c.Weight);
             _electrePrinter = printer;
+            _agreementIndex = agreementIndex;
+            _disagreementIndex = disagreementIndex;
         }
 
         public List<Result> Handle(bool print = false)
@@ -128,7 +132,7 @@ namespace Electre.src
 
         private int Superiority(Index a, Index b)
         {
-            if (a.Value > b.Value) return 1;
+            if (a.Value >= _agreementIndex && b.Value <= _disagreementIndex) return 1;
             else return 0;
         }
     }

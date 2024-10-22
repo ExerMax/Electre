@@ -6,6 +6,9 @@ Console.WriteLine("Eletre Console Application\n");
 
 string path = "test.txt";
 
+double agreementIndex = 0.126d;
+double disagreementIndex = 0.4d;
+
 List<string> criterionNames;
 List<int> criterionWeights;
 List<Criterion> criterions = new List<Criterion>();
@@ -50,6 +53,6 @@ using (StreamReader reader = new StreamReader(path))
 
 var printer = new MyElectrePrinter();
 
-var emh = new ElectreMethodHandler(printer, criterions, values);
+var emh = new ElectreMethodHandler(printer, criterions, values, agreementIndex, disagreementIndex);
 
 var res = emh.Handle(true);
